@@ -1,0 +1,11 @@
+{
+    "appName": {
+        "message": "OmniCommand"
+    },
+    "appShortName": {
+        "message": "OmniCommand"
+    },
+    "appDescription": {
+        "message": "listens to PG's commands"
+    }
+}
