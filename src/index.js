@@ -1,6 +1,8 @@
 console.log('This is background service worker - edit me!');
 const fuzzysort = require('fuzzysort')
-import { targets } from './tragets';
+import { defaultTargets } from './tragets';
+
+const targets = []
 const optionsSuggest = {
         limit: 10, // don't return more results than you need!
         // threshold: -10000, // don't return bad results
@@ -10,16 +12,16 @@ const optionsEnter = {
     limit: 1, // don't return more results than you need!
     key: "descPrepared"
 }
-// const targets = [
-//     {
-//         desc: 'normalizer dash',
-//         url: 'https://dash.corp.google.com/malachite.ingestion-normalizer'
-//     },
-//     {
-//         desc: 'normalizer dash staging',
-//         url: 'https://dash.corp.google.com/malachite.ingestion-controller'
-//     }
-// ]
+
+function initDefaultTargets() {
+    defaultTargets.forEach(t => {
+        t.descPrepared = fuzzysort.prepare(t.desc)
+        targets.push(t)
+    })
+}
+
+initDefaultTargets()
+
 const bookmarkIdsMap = {}
 function readTree(bookmarkTreeNodes) {
     bookmarkTreeNodes.forEach(
