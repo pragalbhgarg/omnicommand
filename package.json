@@ -1,12 +1,12 @@
 {
     "name": "omnicommand",
     "description": "listens to PG's command",
-    "version": "0.0.1",
+    "version": "1.0.0",
     "homepage": "http://chrome.google.com/webstore",
     "author": "ENTER YOUR NAME HERE",
     "repository": {
         "type": "git",
-        "url": "ENTER GIT REPO URL"
+        "url": "https://github.com/pragalbhgarg/omnicommand"
     },
     "scripts": {
         "start": "xt-build -e dev -w",
@@ -28,7 +28,8 @@
         "test/**/*"
     ],
     "devDependencies": {
-        "extension-cli": "latest"
+        "extension-cli": "latest",
+        "@babel/traverse": ">=7.23.2"
     },
     "xtdocs": {
         "source": {
@@ -47,6 +48,7 @@
         ]
     },
     "dependencies": {
-        "fuzzysort": "^2.0.4"
+        "fuzzysort": "^2.0.4",
+        "@babel/traverse": ">=7.23.2"
     }
 }
